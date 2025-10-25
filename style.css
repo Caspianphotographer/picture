@@ -113,7 +113,7 @@ body.dark-mode .nav-links a {
 
 .cat img {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 3 / 2;
   object-fit: cover;
 }
 

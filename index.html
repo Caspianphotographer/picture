@@ -1,85 +1,56 @@
 <!DOCTYPE html>
 <html lang="fa">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>گالری تصاویر</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caspian Photographer | AmirMahdi Zareei</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- ======================
-         منوی بالا
-    ====================== -->
-    <nav class="navbar">
-        <div class="logo">گالری من</div>
-        <div class="nav-links">
-            <a href="#home">خانه</a>
-            <a href="#categories">دسته‌ها</a>
-            <a href="#contact">تماس</a>
-            <span class="dark-mode-toggle" onclick="toggleDarkMode()">🌓</span>
-        </div>
-    </nav>
-
-    <!-- ======================
-         بخش پارالاکس
-    ====================== -->
-    <section class="parallax"></section>
-
-    <!-- ======================
-         گالری دسته‌ها
-    ====================== -->
-    <section id="categories" class="category-gallery">
-
-        <!-- تصویر نمونه -->
-        <div class="category-image-container">
-            <img src="assets/thumbs/photo1.jpg" alt="تصویر ۱" onclick="openLightbox(this)">
-        </div>
-
-        <div class="category-image-container">
-            <img src="assets/thumbs/photo2.jpg" alt="تصویر ۲" onclick="openLightbox(this)">
-        </div>
-
-        <div class="category-image-container">
-            <img src="assets/thumbs/photo3.jpg" alt="تصویر ۳" onclick="openLightbox(this)">
-        </div>
-
-        <!-- میتونی تصاویر بیشتری اضافه کنی -->
-    </section>
-
-    <!-- ======================
-         لایت‌باکس
-    ====================== -->
-    <div class="lightbox" id="lightbox">
-        <span class="close-btn" onclick="closeLightbox()">&times;</span>
-        <img id="lightbox-img" src="" alt="تصویر">
+  <!-- 🧭 نوار منو -->
+  <nav class="navbar">
+    <div class="logo">Caspian Photographer</div>
+    <div class="nav-links">
+      <a href="index.html" class="active">خانه</a>
+      <a href="gallery.html">گالری</a>
+      <a href="about.html">درباره من</a>
+      <a href="contact.html">تماس</a>
+      <span class="dark-mode-toggle" onclick="toggleDarkMode()">🌓</span>
     </div>
+  </nav>
 
-    <!-- ======================
-         اسکریپت ها
-    ====================== -->
-    <script>
-        // =======================
-        // حالت تاریک
-        // =======================
-        function toggleDarkMode() {
-            document.body.classList.toggle('dark-mode');
-        }
+  <!-- 🌅 پارالاکس -->
+  <section class="parallax hero">
+    <div class="hero-text">
+      <h1>به دنیای عکس خوش آمدید</h1>
+      <p>ثبت لحظه‌ها با نگاه AmirMahdi Zareei</p>
+    </div>
+  </section>
 
-        // =======================
-        // لایت‌باکس
-        // =======================
-        function openLightbox(img) {
-            document.getElementById('lightbox-img').src = img.src;
-            document.getElementById('lightbox').classList.add('active');
-        }
+  <!-- 🖼️ دسته‌ها -->
+  <section class="categories" id="categories">
+    <h2>دسته‌بندی عکس‌ها</h2>
+    <div class="grid">
+      <a href="gallery.html?category=nature" class="cat">
+        <img src="assets/thumbs/nature.jpg" alt="طبیعت">
+        <span>طبیعت</span>
+      </a>
+      <a href="gallery.html?category=portrait" class="cat">
+        <img src="assets/thumbs/portrait.jpg" alt="پرتره">
+        <span>پرتره</span>
+      </a>
+      <a href="gallery.html?category=urban" class="cat">
+        <img src="assets/thumbs/urban.jpg" alt="شهری">
+        <span>شهری</span>
+      </a>
+    </div>
+  </section>
 
-        function closeLightbox() {
-            document.getElementById('lightbox').classList.remove('active');
-        }
-    </script>
+  <footer>
+    <p>© 2025 Caspian Photographer — All photos by <strong>AmirMahdi Zareei</strong></p>
+  </footer>
 
-    <script src="script.js"></script>
-
+  <script src="script.js"></script>
 </body>
 </html>

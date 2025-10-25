@@ -1,44 +1,69 @@
-/* منوی ثابت بالا */
+/* 🎨 منوی گرافیکی ثابت */
 .main-header {
   position: fixed;
   top: 0;
   width: 100%;
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(6px);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  background: linear-gradient(90deg, #0b74de, #002b5c);
+  color: #fff;
   z-index: 999;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }
 
-.main-header nav {
-  max-width: 1000px;
+.navbar {
+  max-width: 1100px;
   margin: 0 auto;
+  padding: 15px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 20px;
 }
 
-.main-header .logo {
+.logo {
+  font-size: 1.3rem;
+  color: #fff;
   font-weight: bold;
-  color: #0b74de;
   text-decoration: none;
-  font-size: 1.2rem;
+  transition: transform 0.3s;
+}
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 25px;
 }
 
 .nav-links a {
+  color: #fff;
   text-decoration: none;
-  color: #333;
-  margin-left: 20px;
-  transition: color 0.2s;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s;
 }
 
-.nav-links a:hover {
-  color: #0b74de;
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: #fff;
+  transition: width 0.3s;
 }
 
-/* برای اینکه محتوا زیر منو پنهان نشه */
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* فاصله از بالای محتوا برای منوی ثابت */
 body {
-  padding-top: 70px;
+  padding-top: 80px;
 }
 
 

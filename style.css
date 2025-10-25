@@ -1,0 +1,73 @@
+body {
+  font-family: "Tahoma", sans-serif;
+  direction: rtl;
+  margin: 0;
+  background: #f8f9fb;
+  color: #222;
+}
+
+.hero {
+  text-align: center;
+  background: url('assets/thumbs/nature.jpg') center/cover;
+  color: #fff;
+  padding: 80px 20px;
+  background-blend-mode: multiply;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.categories {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.categories h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 1.8rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.cat {
+  text-decoration: none;
+  color: #000;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.cat:hover { transform: translateY(-5px); }
+
+.cat img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.cat span {
+  display: block;
+  text-align: center;
+  padding: 10px;
+  font-weight: bold;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+  color: #777;
+}

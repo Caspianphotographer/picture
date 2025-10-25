@@ -1,8 +1,39 @@
-/ (root)
-│
-├── index.html           → صفحه اصلی (نمایش دسته‌ها)
-├── gallery.html         → صفحه گالری هر دسته
-├── style.css            → فایل استایل
-├── script.js            → منطق جاوااسکریپت
-└── /assets
-     └── /thumbs         → تصاویر کوچک (thumbnail)
+<!doctype html>
+<html lang="fa">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Caspian Photographer | AmirMahdi Zareei</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="hero">
+  <h1>Caspian Photographer</h1>
+  <p>By <strong>AmirMahdi Zareei</strong></p>
+</header>
+
+<main class="categories">
+  <h2>دسته‌بندی‌ها</h2>
+  <div class="grid">
+    <a href="gallery.html?category=nature" class="cat">
+      <img src="assets/thumbs/nature.jpg" alt="تیم فجر" />
+      <span>فجر</span>
+    </a>
+    <a href="gallery.html?category=portrait" class="cat">
+      <img src="assets/thumbs/portrait.jpg" alt="نماز جمعه" />
+      <span>نماز</span>
+    </a>
+    <a href="gallery.html?category=urban" class="cat">
+      <img src="assets/thumbs/urban.jpg" alt="شهری" />
+      <span>شهری</span>
+    </a>
+  </div>
+</main>
+
+<footer>
+  <p>© 2025 Caspian Photographer — All photos by <strong>AmirMahdi Zareei</strong></p>
+</footer>
+
+</body>
+</html>

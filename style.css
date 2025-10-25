@@ -1,48 +1,186 @@
-/* منوی ثابت بالا */
-.main-header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: rgba(255, 255, 255, 0.9);
-  backdrop-filter: blur(6px);
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  z-index: 999;
+/* =======================
+   Reset و استایل پایه
+======================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-
-.main-header nav {
-  max-width: 1000px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 20px;
-}
-
-.main-header .logo {
-  font-weight: bold;
-  color: #0b74de;
-  text-decoration: none;
-  font-size: 1.2rem;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: #333;
-  margin-left: 20px;
-  transition: color 0.2s;
-}
-
-.nav-links a:hover {
-  color: #0b74de;
-}
-
-/* برای اینکه محتوا زیر منو پنهان نشه */
-body {
-  padding-top: 70px;
-}
-
-
 
 body {
-font-family: "Tahoma", sans-serif;
-direction: rtl;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* =======================
+   حالت تاریک
+======================= */
+body.dark-mode {
+    background-color: #121212;
+    color: #f5f5f5;
+}
+
+body.dark-mode .navbar {
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+}
+
+body.dark-mode .navbar a {
+    color: #fff;
+}
+
+body.dark-mode .navbar a:hover {
+    color: #ffd700;
+}
+
+body.dark-mode .category-image-container {
+    box-shadow: 0 4px 12px rgba(255,255,255,0.1);
+}
+
+body.dark-mode .lightbox {
+    background-color: rgba(0,0,0,0.95);
+}
+
+/* =======================
+   منوی بالا (Navbar)
+======================= */
+.navbar {
+    width: 100%;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    padding: 15px 30px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border-radius: 0 0 15px 15px;
+    transition: background 0.3s, box-shadow 0.3s;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #ffd700;
+    transform: scale(1.1);
+}
+
+/* =======================
+   دکمه تغییر حالت تاریک
+======================= */
+.dark-mode-toggle {
+    cursor: pointer;
+    font-size: 1.2rem;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background: rgba(255,255,255,0.2);
+    transition: background 0.3s, transform 0.3s;
+}
+
+.dark-mode-toggle:hover {
+    background: rgba(255,255,255,0.4);
+    transform: scale(1.1);
+}
+
+/* =======================
+   پارالاکس پس‌زمینه
+======================= */
+.parallax {
+    background-image: url('assets/background.jpg'); /* مسیر تصویر خودت */
+    min-height: 400px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* =======================
+   گالری دسته‌ها
+======================= */
+.category-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 120px 30px 30px 30px; /* فاصله از منو */
+}
+
+/* Container هر تصویر */
+.category-image-container {
+    width: 100%;
+    aspect-ratio: 4 / 3; /* نسبت ۴:۳ افقی */
+    overflow: hidden;
+    border-radius: 10px;
+    cursor: pointer;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.category-image-container:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* خود تصویر */
+.category-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* =======================
+   لایت‌باکس
+======================= */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 2000;
+}
+
+.lightbox.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+}
+
+/* دکمه بستن لایت‌باکس */
+.lightbox .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.lightbox .close-btn:hover {
+    color: #ffd700;
+}

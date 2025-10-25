@@ -48,3 +48,27 @@ if(galleryGrid){
     galleryGrid.appendChild(card);
   });
 }
+
+
+// Lightbox logic
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+const closeBtn = document.querySelector(".lightbox .close");
+
+// وقتی روی عکس کلیک میشه، لایت‌باکس باز بشه
+document.addEventListener("click", e => {
+  if(e.target.tagName === "IMG" && e.target.closest(".cat")){
+    lightbox.style.display = "flex";
+    lightboxImg.src = e.target.src;
+  }
+});
+
+// بستن لایت‌باکس
+closeBtn.addEventListener("click", () => {
+  lightbox.style.display = "none";
+});
+
+// بستن با کلیک روی زمینه تیره
+lightbox.addEventListener("click", e => {
+  if(e.target === lightbox) lightbox.style.display = "none";
+});

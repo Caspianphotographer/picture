@@ -39,10 +39,10 @@ function closeLightbox() {
 // گالری دسته‌ها
 function loadGallery() {
   const params = new URLSearchParams(window.location.search);
-  const category = params.get("category") || "nature";
+  const category = params.get("category") || "fajr1";
 
   const photos = {
-    nature: [
+    fajr1: [
       "assets/thumbs/fajr-1.jpg",
       "assets/thumbs/fajr-2.jpg",
       "assets/thumbs/fajr-3.jpg",

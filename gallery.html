@@ -1,66 +1,104 @@
-<header class="main-header">
-  <nav class="navbar">
-    <a href="index.html" class="logo">📸 Caspian Photographer</a>
-    <ul class="nav-links">
-      <li><a href="index.html">خانه</a></li>
-      <li><a href="gallery.html?category=nature">گالری</a></li>
-      <li><a href="about.html">درباره من</a></li>
-      <li><a href="contact.html">تماس</a></li>
-    </ul>
-  </nav>
-</header>
-
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fa">
-  <!-- AOS Animation -->
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>گالری - Caspian Photographer</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>گالری تصاویر | Caspian Photographer</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header class="hero small">
-  <h1 id="catTitle">در حال بارگذاری...</h1>
-  <p>By AmirMahdi Zareei</p>
-</header>
+  <!-- ======================
+       منوی بالا
+  ====================== -->
+  <nav class="navbar">
+    <div class="logo">Caspian Photographer</div>
+    <div class="nav-links">
+      <a href="index.html">خانه</a>
+      <a href="gallery.html">گالری</a>
+      <a href="about.html">درباره من</a>
+      <span class="dark-mode-toggle" onclick="toggleDarkMode()">🌓</span>
+    </div>
+  </nav>
 
-<main class="gallery">
-  <div id="galleryGrid" class="grid"></div>
-</main>
+  <!-- ======================
+       پارالاکس دسته‌ها
+  ====================== -->
+  <section class="parallax small"></section>
 
-<footer>
-  <p><a href="index.html">بازگشت به صفحه اصلی</a></p>
-  <p>© 2025 Caspian Photographer</p>
-</footer>
+  <!-- ======================
+       گالری عکس‌ها
+  ====================== -->
+  <section id="gallery" class="category-gallery"></section>
 
-<script src="script.js"></script>
-  
-<!-- Lightbox -->
-<div id="lightbox" class="lightbox">
-  <span class="close">&times;</span>
-  <img id="lightbox-img" src="" alt="">
-  <span class="prev">&#10094;</span>
-  <span class="next">&#10095;</span>
-</div>
+  <!-- ======================
+       لایت‌باکس
+  ====================== -->
+  <div class="lightbox" id="lightbox">
+    <span class="close-btn" onclick="closeLightbox()">&times;</span>
+    <img id="lightbox-img" src="" alt="">
+  </div>
 
-<script>
-  AOS.init({
-    duration: 800,
-    offset: 100,
-    once: true
-  });
-</script>
+  <footer>
+    <p>© 2025 Caspian Photographer — All photos by <strong>AmirMahdi Zareei</strong></p>
+  </footer>
+
+  <!-- ======================
+       اسکریپت
+  ====================== -->
+  <script>
+    // حالت تاریک
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+
+    // لایت‌باکس
+    function openLightbox(img) {
+      document.getElementById("lightbox-img").src = img.src;
+      document.getElementById("lightbox").classList.add("active");
+    }
+
+    function closeLightbox() {
+      document.getElementById("lightbox").classList.remove("active");
+    }
+
+    // دریافت دسته از URL
+    const params = new URLSearchParams(window.location.search);
+    const category = params.get("category") || "nature";
+
+    // عکس‌ها
+    const photos = {
+      nature: [
+        "assets/thumbs/nature1.jpg",
+        "assets/thumbs/nature2.jpg",
+        "assets/thumbs/nature3.jpg"
+      ],
+      portrait: [
+        "assets/thumbs/portrait1.jpg",
+        "assets/thumbs/portrait2.jpg",
+        "assets/thumbs/portrait3.jpg"
+      ],
+      urban: [
+        "assets/thumbs/urban1.jpg",
+        "assets/thumbs/urban2.jpg",
+        "assets/thumbs/urban3.jpg"
+      ]
+    };
+
+    const gallerySection = document.getElementById("gallery");
+    const selectedPhotos = photos[category] || [];
+
+    if (selectedPhotos.length === 0) {
+      gallerySection.innerHTML = "<p style='text-align:center;color:#777'>عکسی در این دسته وجود ندارد.</p>";
+    } else {
+      selectedPhotos.forEach(url => {
+        const div = document.createElement("div");
+        div.className = "category-image-container";
+        div.innerHTML = `<img src="${url}" onclick="openLightbox(this)" alt="عکس ${category}">`;
+        gallerySection.appendChild(div);
+      });
+    }
+  </script>
 
 </body>
 </html>
-
-
-<footer class="main-footer">
-  <p>© 2025 <strong>Caspian Photographer</strong> — Photography by <strong>AmirMahdi Zareei</strong></p>
-</footer>

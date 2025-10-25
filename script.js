@@ -19,7 +19,8 @@ if(catTitle) catTitle.textContent = titles[category] || "گالری";
 const photos = {
   nature: [
     "https://res.cloudinary.com/demo/image/upload/sample.jpg",
-    "https://res.cloudinary.com/demo/image/upload/flower.jpg"
+    "https://res.cloudinary.com/demo/image/upload/flower.jpg",
+    <img src="assets/thumbs/export-0036.jpg" alt="export-0036" />
   ],
   portrait: [
     "https://res.cloudinary.com/demo/image/upload/man.jpg",

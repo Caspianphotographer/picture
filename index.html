@@ -1,40 +1,83 @@
-
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fa">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Caspian Photographer | AmirMahdi Zareei</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>گالری تصاویر</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header class="hero">
-  <h1>Caspian Photographer</h1>
-  <p>By <strong>AmirMahdi Zareei</strong></p>
-</header>
+    <!-- ======================
+         منوی بالا
+    ====================== -->
+    <nav class="navbar">
+        <div class="logo">گالری من</div>
+        <div class="nav-links">
+            <a href="#home">خانه</a>
+            <a href="#categories">دسته‌ها</a>
+            <a href="#contact">تماس</a>
+            <span class="dark-mode-toggle" onclick="toggleDarkMode()">🌓</span>
+        </div>
+    </nav>
 
-<main class="categories">
-  <h2>دسته‌بندی‌ها</h2>
-  <div class="grid">
-    <a href="gallery.html?category=nature" class="cat">
-      <img src="assets/thumbs/nature.jpg" alt="تیم فجر" />
-      <span>فجر</span>
-    </a>
-    <a href="gallery.html?category=portrait" class="cat">
-      <img src="assets/thumbs/portrait.jpg" alt="نماز جمعه" />
-      <span>نماز</span>
-    </a>
-    <a href="gallery.html?category=urban" class="cat">
-      <img src="assets/thumbs/urban.jpg" alt="شهری" />
-      <span>شهری</span>
-    </a>
-  </div>
-</main>
+    <!-- ======================
+         بخش پارالاکس
+    ====================== -->
+    <section class="parallax"></section>
 
-<footer>
-  <p>© 2025 Caspian Photographer — All photos by <strong>AmirMahdi Zareei</strong></p>
-</footer>
+    <!-- ======================
+         گالری دسته‌ها
+    ====================== -->
+    <section id="categories" class="category-gallery">
+
+        <!-- تصویر نمونه -->
+        <div class="category-image-container">
+            <img src="assets/thumbs/photo1.jpg" alt="تصویر ۱" onclick="openLightbox(this)">
+        </div>
+
+        <div class="category-image-container">
+            <img src="assets/thumbs/photo2.jpg" alt="تصویر ۲" onclick="openLightbox(this)">
+        </div>
+
+        <div class="category-image-container">
+            <img src="assets/thumbs/photo3.jpg" alt="تصویر ۳" onclick="openLightbox(this)">
+        </div>
+
+        <!-- میتونی تصاویر بیشتری اضافه کنی -->
+    </section>
+
+    <!-- ======================
+         لایت‌باکس
+    ====================== -->
+    <div class="lightbox" id="lightbox">
+        <span class="close-btn" onclick="closeLightbox()">&times;</span>
+        <img id="lightbox-img" src="" alt="تصویر">
+    </div>
+
+    <!-- ======================
+         اسکریپت ها
+    ====================== -->
+    <script>
+        // =======================
+        // حالت تاریک
+        // =======================
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+
+        // =======================
+        // لایت‌باکس
+        // =======================
+        function openLightbox(img) {
+            document.getElementById('lightbox-img').src = img.src;
+            document.getElementById('lightbox').classList.add('active');
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+        }
+    </script>
 
 </body>
 </html>

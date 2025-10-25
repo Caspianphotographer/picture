@@ -128,7 +128,7 @@ body.dark-mode .nav-links a {
 
 .category-image-container img {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 3 / 2;
   object-fit: cover;
   cursor: pointer;
   border-radius: 10px;
@@ -146,7 +146,7 @@ body.dark-mode .nav-links a {
   z-index: 2000;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background: rgba(50,0,0,0.9);
+  background: rgba(10,10,10,0.9);
   justify-content: center;
   align-items: center;
 }

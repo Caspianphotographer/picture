@@ -49,26 +49,54 @@ if(galleryGrid){
   });
 }
 
-
-// Lightbox logic
+// Lightbox پیشرفته
 const lightbox = document.getElementById("lightbox");
 const lightboxImg = document.getElementById("lightbox-img");
 const closeBtn = document.querySelector(".lightbox .close");
+const prevBtn = document.querySelector(".lightbox .prev");
+const nextBtn = document.querySelector(".lightbox .next");
 
-// وقتی روی عکس کلیک میشه، لایت‌باکس باز بشه
+let currentIndex = 0;
+let currentImages = [];
+
+// وقتی گالری ساخته میشه، لیست عکس‌ها رو ذخیره کن
+function collectImages() {
+  currentImages = Array.from(document.querySelectorAll(".cat img")).map(i => i.src);
+}
+collectImages();
+
 document.addEventListener("click", e => {
-  if(e.target.tagName === "IMG" && e.target.closest(".cat")){
-    lightbox.style.display = "flex";
-    lightboxImg.src = e.target.src;
+  if (e.target.tagName === "IMG" && e.target.closest(".cat")) {
+    collectImages();
+    currentIndex = currentImages.indexOf(e.target.src);
+    openLightbox(currentIndex);
   }
 });
 
-// بستن لایت‌باکس
-closeBtn.addEventListener("click", () => {
-  lightbox.style.display = "none";
-});
+function openLightbox(i) {
+  lightbox.style.display = "flex";
+  lightboxImg.src = currentImages[i];
+}
 
-// بستن با کلیک روی زمینه تیره
+function closeLightbox() {
+  lightbox.style.display = "none";
+}
+
+function showNext() {
+  currentIndex = (currentIndex + 1) % currentImages.length;
+  openLightbox(currentIndex);
+}
+
+function showPrev() {
+  currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+  openLightbox(currentIndex);
+}
+
+closeBtn.addEventListener("click", closeLightbox);
+nextBtn.addEventListener("click", showNext);
+prevBtn.addEventListener("click", showPrev);
+
+// بستن با کلیک روی زمینه
 lightbox.addEventListener("click", e => {
-  if(e.target === lightbox) lightbox.style.display = "none";
+  if (e.target === lightbox) closeLightbox();
 });

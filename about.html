@@ -1,64 +1,61 @@
 <!DOCTYPE html>
 <html lang="fa">
-  <!-- AOS Animation -->
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>درباره من | Caspian Photographer</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header class="main-header">
+  <!-- ======================
+       منوی بالا
+  ====================== -->
   <nav class="navbar">
-    <a href="index.html" class="logo">📸 Caspian Photographer</a>
-    <ul class="nav-links">
-      <li><a href="index.html">خانه</a></li>
-      <li><a href="gallery.html?category=nature">گالری</a></li>
-      <li><a href="about.html" class="active">درباره من</a></li>
-      <li><a href="contact.html">تماس</a></li>
-    </ul>
-  </nav>
-</header>
-
-<main class="about">
-  <div class="about-container">
-    <img src="assets/thumbs/portrait.jpg" alt="AmirMahdi Zareei" class="about-photo">
-    <div class="about-text">
-      <h1>AmirMahdi Zareei</h1>
-      <h2>Caspian Photographer</h2>
-      <p>
-        call : 09942843464  
-        instagram : https://instagram.com/Caspian.Photographer
-      </p>
-      <p>
-        از شما دعوت می‌کنم از گالری‌ها دیدن کنید و نظرتون رو در بخش تماس برام بنویسید 🌅
-      </p>
-      <a href="contact.html" class="contact-btn">تماس با من</a>
-      <a href="https://www.instagram.com/caspian.photographer/" class="contact-btn">اینستاگرام</a>
+    <div class="logo">Caspian Photographer</div>
+    <div class="nav-links">
+      <a href="index.html">خانه</a>
+      <a href="gallery.html">گالری</a>
+      <a href="about.html" class="active">درباره من</a>
+      <span class="dark-mode-toggle" onclick="toggleDarkMode()">🌓</span>
     </div>
-  </div>
-</main>
+  </nav>
 
-<footer>
-  <p>© 2025 Caspian Photographer — AmirMahdi Zareei</p>
-</footer>
-  
-<script>
-  AOS.init({
-    duration: 800,
-    offset: 100,
-    once: true
-  });
-</script>
+  <!-- ======================
+       بخش پارالاکس معرفی
+  ====================== -->
+  <section class="parallax about"></section>
+
+  <!-- ======================
+       محتوای معرفی
+  ====================== -->
+  <section class="about-section">
+    <h1>AmirMahdi Zareei</h1>
+    <h3>Cas​pian Photographer</h3>
+    <p>
+      من <strong>امیرمهدی زارعی</strong> هستم، عکاس طبیعت و پرتره از شمال ایران.  
+      عکاسی برای من فقط ثبت تصویر نیست، بلکه روایت احساسات در لحظه‌ای از زمان است.
+      در این وب‌سایت، بخشی از کارهای من را می‌بینید که حاصل سال‌ها تجربه و عشق به نور و رنگ است.
+    </p>
+    <p>
+      اگر علاقه‌مند به همکاری یا ارتباط هستید، خوشحال می‌شم از طریق بخش تماس یا شبکه‌های اجتماعی پیام بدید.
+    </p>
+    <div class="social-links">
+      <a href="#" class="social">📷 Instagram</a>
+      <a href="#" class="social">✉️ Email</a>
+      <a href="#" class="social">🌐 Website</a>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Caspian Photographer — Designed by <strong>AmirMahdi Zareei</strong></p>
+  </footer>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark-mode');
+    }
+  </script>
 
 </body>
 </html>
-
-
-<footer class="main-footer">
-  <p>© 2025 <strong>Caspian Photographer</strong> — Photography by <strong>AmirMahdi Zareei</strong></p>
-</footer>

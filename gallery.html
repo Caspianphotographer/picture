@@ -8,97 +8,30 @@
 </head>
 <body>
 
-  <!-- ======================
-       منوی بالا
-  ====================== -->
   <nav class="navbar">
     <div class="logo">Caspian Photographer</div>
     <div class="nav-links">
       <a href="index.html">خانه</a>
-      <a href="gallery.html">گالری</a>
+      <a href="gallery.html" class="active">گالری</a>
       <a href="about.html">درباره من</a>
+      <a href="contact.html">تماس</a>
       <span class="dark-mode-toggle" onclick="toggleDarkMode()">🌓</span>
     </div>
   </nav>
 
-  <!-- ======================
-       پارالاکس دسته‌ها
-  ====================== -->
   <section class="parallax small"></section>
 
-  <!-- ======================
-       گالری عکس‌ها
-  ====================== -->
   <section id="gallery" class="category-gallery"></section>
 
-  <!-- ======================
-       لایت‌باکس
-  ====================== -->
   <div class="lightbox" id="lightbox">
     <span class="close-btn" onclick="closeLightbox()">&times;</span>
     <img id="lightbox-img" src="" alt="">
   </div>
 
   <footer>
-    <p>© 2025 Caspian Photographer — All photos by <strong>AmirMahdi Zareei</strong></p>
+    <p>© 2025 Caspian Photographer — Photos by AmirMahdi Zareei</p>
   </footer>
 
-  <!-- ======================
-       اسکریپت
-  ====================== -->
-  <script>
-    // حالت تاریک
-    function toggleDarkMode() {
-      document.body.classList.toggle('dark-mode');
-    }
-
-    // لایت‌باکس
-    function openLightbox(img) {
-      document.getElementById("lightbox-img").src = img.src;
-      document.getElementById("lightbox").classList.add("active");
-    }
-
-    function closeLightbox() {
-      document.getElementById("lightbox").classList.remove("active");
-    }
-
-    // دریافت دسته از URL
-    const params = new URLSearchParams(window.location.search);
-    const category = params.get("category") || "nature";
-
-    // عکس‌ها
-    const photos = {
-      nature: [
-        "assets/thumbs/nature1.jpg",
-        "assets/thumbs/nature2.jpg",
-        "assets/thumbs/nature3.jpg"
-      ],
-      portrait: [
-        "assets/thumbs/portrait1.jpg",
-        "assets/thumbs/portrait2.jpg",
-        "assets/thumbs/portrait3.jpg"
-      ],
-      urban: [
-        "assets/thumbs/urban1.jpg",
-        "assets/thumbs/urban2.jpg",
-        "assets/thumbs/urban3.jpg"
-      ]
-    };
-
-    const gallerySection = document.getElementById("gallery");
-    const selectedPhotos = photos[category] || [];
-
-    if (selectedPhotos.length === 0) {
-      gallerySection.innerHTML = "<p style='text-align:center;color:#777'>عکسی در این دسته وجود ندارد.</p>";
-    } else {
-      selectedPhotos.forEach(url => {
-        const div = document.createElement("div");
-        div.className = "category-image-container";
-        div.innerHTML = `<img src="${url}" onclick="openLightbox(this)" alt="عکس ${category}">`;
-        gallerySection.appendChild(div);
-      });
-    }
-  </script>
-
+  <script src="script.js"></script>
 </body>
 </html>

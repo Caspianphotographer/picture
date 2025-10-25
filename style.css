@@ -169,3 +169,25 @@ footer {
   font-size: 40px;
   cursor: pointer;
 }
+
+
+.lightbox .prev,
+.lightbox .next {
+  position: absolute;
+  top: 50%;
+  color: #fff;
+  font-size: 40px;
+  cursor: pointer;
+  user-select: none;
+  padding: 10px;
+  transform: translateY(-50%);
+  transition: 0.3s;
+}
+
+.lightbox .prev { left: 20px; }
+.lightbox .next { right: 20px; }
+
+.lightbox .prev:hover,
+.lightbox .next:hover {
+  color: #0b74de;
+}

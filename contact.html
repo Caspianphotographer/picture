@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>تماس با من | Caspian Photographer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">Caspian Photographer</div>
+    <div class="nav-links">
+      <a href="index.html">خانه</a>
+      <a href="gallery.html">گالری</a>
+      <a href="about.html">درباره من</a>
+      <a href="contact.html" class="active">تماس</a>
+      <span class="dark-mode-toggle" onclick="toggleDarkMode()">🌓</span>
+    </div>
+  </nav>
+
+  <section class="parallax contact"></section>
+
+  <section class="contact-section">
+    <h2>تماس با من</h2>
+    <p>برای همکاری، پروژه یا پیشنهاد لطفاً فرم زیر را پر کنید:</p>
+
+    <!-- فرم Formspree -->
+    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="contact-form">
+      <label>نام</label>
+      <input type="text" name="name" required>
+
+      <label>ایمیل</label>
+      <input type="email" name="email" required>
+
+      <label>پیام شما</label>
+      <textarea name="message" rows="5" required></textarea>
+
+      <button type="submit">ارسال پیام</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 Caspian Photographer — AmirMahdi Zareei</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

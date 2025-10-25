@@ -1,55 +1,98 @@
-// گرفتن المنت‌ها از صفحه
-const galleryGrid = document.getElementById("galleryGrid");
-const catTitle = document.getElementById("catTitle");
+/* ================================
+   Caspian Photographer - script.js
+   Author: AmirMahdi Zareei
+   ================================ */
 
-// گرفتن نام دسته از URL (مثلاً ?category=nature)
-const params = new URLSearchParams(window.location.search);
-const category = params.get("category");
+/* 🎨 حالت تاریک / روشن */
+function toggleDarkMode() {
+  document.body.classList.toggle("dark-mode");
+  localStorage.setItem(
+    "darkMode",
+    document.body.classList.contains("dark-mode") ? "on" : "off"
+  );
+}
 
-// تنظیم عنوان صفحه
-const titles = {
-  nature: "طبیعت",
-  portrait: "پرتره",
-  urban: "شهری"
-};
-if (catTitle) catTitle.textContent = titles[category] || "گالری Caspian";
+// وقتی صفحه لود میشه، حالت ذخیره‌شده رو اعمال کن
+document.addEventListener("DOMContentLoaded", () => {
+  if (localStorage.getItem("darkMode") === "on") {
+    document.body.classList.add("dark-mode");
+  }
 
-// لینک عکس‌ها (می‌تونی بعداً Cloudinary بذاری)
-const photos = {
-  nature: [
-    "https://res.cloudinary.com/demo/image/upload/sample.jpg",
-    "https://res.cloudinary.com/demo/image/upload/flower.jpg"
-  ],
-  portrait: [
-    "https://res.cloudinary.com/demo/image/upload/v1622298462/man.jpg",
-    "https://res.cloudinary.com/demo/image/upload/v1622298463/woman.jpg"
-  ],
-  urban: [
-    "https://res.cloudinary.com/demo/image/upload/v1622298464/city.jpg",
-    "https://res.cloudinary.com/demo/image/upload/v1622298465/street.jpg"
-  ]
-};
+  // بررسی کنیم اگر صفحه گالری هست، گالری رو بسازیم
+  if (document.getElementById("gallery")) {
+    loadGallery();
+  }
+});
 
-// اگر گالری وجود داره، عکس‌ها رو بساز
-if (galleryGrid && photos[category]) {
+/* 💡 لایت‌باکس */
+function openLightbox(img) {
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+  if (lightbox && lightboxImg) {
+    lightboxImg.src = img.src;
+    lightbox.classList.add("active");
+  }
+}
+
+function closeLightbox() {
+  const lightbox = document.getElementById("lightbox");
+  if (lightbox) lightbox.classList.remove("active");
+}
+
+/* 🖼️ گالری دسته‌ها */
+function loadGallery() {
+  const params = new URLSearchParams(window.location.search);
+  const category = params.get("category") || "nature";
+
+  const photos = {
+    nature: [
+      "assets/thumbs/nature1.jpg",
+      "assets/thumbs/nature2.jpg",
+      "assets/thumbs/nature3.jpg"
+    ],
+    portrait: [
+      "assets/thumbs/portrait1.jpg",
+      "assets/thumbs/portrait2.jpg",
+      "assets/thumbs/portrait3.jpg"
+    ],
+    urban: [
+      "assets/thumbs/urban1.jpg",
+      "assets/thumbs/urban2.jpg",
+      "assets/thumbs/urban3.jpg"
+    ]
+  };
+
+  const gallerySection = document.getElementById("gallery");
+  gallerySection.innerHTML = "";
+
+  if (!photos[category] || photos[category].length === 0) {
+    gallerySection.innerHTML = `
+      <p style="text-align:center;color:#777;margin-top:40px">
+        هیچ عکسی در این دسته وجود ندارد.
+      </p>`;
+    return;
+  }
+
+  // ساختن گالری
   photos[category].forEach(url => {
-    const card = document.createElement("div");
-    card.className = "cat";
-
+    const container = document.createElement("div");
+    container.className = "category-image-container";
     const img = document.createElement("img");
     img.src = url;
     img.alt = category;
-
-    const link = document.createElement("a");
-    link.href = url;
-    link.download = true;
-    link.textContent = "دانلود عکس";
-    link.className = "download-link";
-
-    card.appendChild(img);
-    card.appendChild(link);
-    galleryGrid.appendChild(card);
+    img.onclick = () => openLightbox(img);
+    container.appendChild(img);
+    gallerySection.appendChild(container);
   });
-} else if (galleryGrid) {
-  galleryGrid.innerHTML = "<p>هیچ عکسی برای این دسته پیدا نشد 😕</p>";
 }
+
+/* 🌐 دکمه‌های منو (اسکرول نرم) */
+document.querySelectorAll('.nav-links a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute("href"));
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+    }
+  });
+});

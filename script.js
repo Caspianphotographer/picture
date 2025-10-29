@@ -50,6 +50,7 @@ function openLightbox(img) {
 
   lightboxImg.src = img.src;
   lightbox.classList.add("active");
+  lightboxImg.classList.add("fade-in");
 }
 
 function closeLightbox() {
@@ -65,11 +66,22 @@ function closeLightboxOnBg(e) {
 
 function showImage(index) {
   const lightboxImg = document.getElementById("lightbox-img");
-  if (index < 0) index = currentImages.length - 1; // از آخر برگرد
-  if (index >= currentImages.length) index = 0; // از اول برگرد
+  if (index < 0) index = currentImages.length - 1;
+  if (index >= currentImages.length) index = 0;
   currentIndex = index;
-  lightboxImg.src = currentImages[currentIndex].src;
+
+  // شروع محو شدن
+  lightboxImg.classList.remove("fade-in");
+  lightboxImg.classList.add("fade-out");
+
+  // بعد از نیم ثانیه، عکس جدید لود و افکت محو شدن برعکس اجرا میشه
+  setTimeout(() => {
+    lightboxImg.src = currentImages[currentIndex].src;
+    lightboxImg.classList.remove("fade-out");
+    lightboxImg.classList.add("fade-in");
+  }, 250); // نصف زمان ترنزیشن برای هماهنگی بهتر
 }
+
 
 function nextImage(e) {
   e.stopPropagation(); // جلوگیری از بسته شدن لایت‌باکس

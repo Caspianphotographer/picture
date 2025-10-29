@@ -88,7 +88,7 @@ function loadGallery() {
       "assets/thumbs/urban1.jpg",
       "assets/thumbs/urban2.jpg",
       "assets/thumbs/urban3.jpg"
-    ]
+    ],
     fajr2: [
       "assets/thumbs/fajr2-4.jpg",
       "assets/thumbs/fajr2-5.jpg",

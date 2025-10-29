@@ -233,6 +233,7 @@ function loadGallery() {
     const div = document.createElement("div");
     div.className = "category-image-container";
     const img = document.createElement("img");
+    img.loading = "lazy";
     img.src = url;
     img.alt = category;
     img.onclick = () => openLightbox(img);

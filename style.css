@@ -64,6 +64,17 @@ body.dark-mode .nav-links a {
   font-size: 1.2rem;
 }
 
+.dark-mode-toggle {
+  display: inline-block !important;
+  color: #222;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+body.dark-mode .dark-mode-toggle {
+  color: #fff;
+}
+
 /* ========== پارالاکس ========== */
 .parallax {
   height: 60vh;

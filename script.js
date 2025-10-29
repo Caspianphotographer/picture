@@ -107,6 +107,13 @@ function loadGallery() {
   const params = new URLSearchParams(window.location.search);
   const category = params.get("category") || "fajr1";
 
+  const categoryInfo = {
+    fajr1: "برد پرگل فجر — ثبت احساسات تیم و هواداران در لحظه پیروزی.",
+    portrait: "چهره‌هایی از زندگی روزمره، در لحظه‌هایی که احساس واقعی دیده می‌شود.",
+    urban: "نمایی از شهرها و خیابان‌ها، در هم‌زیستی نظم و بی‌نظمی مدرن.",
+    fajr2: "فوتبال میان غبار — روایت نبردی پر از احساس میان فجر و سورن."
+  };
+
   const photos = {
     fajr1: [
       "assets/thumbs/fajr-1.jpg",
@@ -208,6 +215,11 @@ function loadGallery() {
 
   const gallerySection = document.getElementById("gallery");
   gallerySection.innerHTML = "";
+
+  const infoText = document.createElement("p");
+  infoText.className = "category-info";
+  infoText.textContent = categoryInfo[category] || "";
+  gallerySection.before(infoText);
 
   const selected = photos[category] || [];
 

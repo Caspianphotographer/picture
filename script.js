@@ -81,6 +81,15 @@ function prevImage(e) {
   showImage(currentIndex - 1);
 }
 
+document.addEventListener("keydown", (e) => {
+  const lightbox = document.getElementById("lightbox");
+  if (!lightbox.classList.contains("active")) return;
+
+  if (e.key === "ArrowRight") nextImage(e);
+  if (e.key === "ArrowLeft") prevImage(e);
+  if (e.key === "Escape") closeLightbox();
+});
+
 // گالری دسته‌ها
 function loadGallery() {
   const params = new URLSearchParams(window.location.search);

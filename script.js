@@ -36,6 +36,51 @@ function closeLightbox() {
   document.getElementById("lightbox").classList.remove("active");
 }
 
+// کنترل عکس فعلی
+let currentImages = [];
+let currentIndex = 0;
+
+function openLightbox(img) {
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+
+  // همه‌ی عکس‌های گالری فعلی رو ذخیره کن
+  currentImages = Array.from(document.querySelectorAll(".category-image-container img"));
+  currentIndex = currentImages.indexOf(img);
+
+  lightboxImg.src = img.src;
+  lightbox.classList.add("active");
+}
+
+function closeLightbox() {
+  document.getElementById("lightbox").classList.remove("active");
+}
+
+function closeLightboxOnBg(e) {
+  // فقط اگه روی فضای خالی کلیک شد (نه روی عکس یا دکمه‌ها)
+  if (e.target.id === "lightbox") {
+    closeLightbox();
+  }
+}
+
+function showImage(index) {
+  const lightboxImg = document.getElementById("lightbox-img");
+  if (index < 0) index = currentImages.length - 1; // از آخر برگرد
+  if (index >= currentImages.length) index = 0; // از اول برگرد
+  currentIndex = index;
+  lightboxImg.src = currentImages[currentIndex].src;
+}
+
+function nextImage(e) {
+  e.stopPropagation(); // جلوگیری از بسته شدن لایت‌باکس
+  showImage(currentIndex + 1);
+}
+
+function prevImage(e) {
+  e.stopPropagation();
+  showImage(currentIndex - 1);
+}
+
 // گالری دسته‌ها
 function loadGallery() {
   const params = new URLSearchParams(window.location.search);

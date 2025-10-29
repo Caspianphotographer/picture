@@ -23,10 +23,14 @@
 
   <section id="gallery" class="category-gallery"></section>
 
-  <div class="lightbox" id="lightbox">
-    <span class="close-btn" onclick="closeLightbox()">&times;</span>
-    <img id="lightbox-img" src="" alt="">
+  <div class="lightbox" id="lightbox" onclick="closeLightboxOnBg(event)">
+  <span class="close-btn" onclick="closeLightbox()">&times;</span>
+  <img id="lightbox-img" src="" alt="">
+  <div class="nav-buttons">
+    <button class="prev" onclick="prevImage(event)">⟨ قبلی</button>
+    <button class="next" onclick="nextImage(event)">بعدی ⟩</button>
   </div>
+</div>
 
   <footer>
     <p>© 2023 Caspian Photographer — Photos by AmirMahdi Zareei</p>

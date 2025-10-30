@@ -30,9 +30,20 @@ function toggleMenu() {
 
 // اعمال حالت ذخیره‌شده
 document.addEventListener("DOMContentLoaded", () => {
+  const toggleBtn = document.querySelector(".dark-mode-toggle");
+
   if (localStorage.getItem("darkMode") === "on") {
     document.body.classList.add("dark-mode");
+    toggleBtn.textContent = "🌙";
+  } else {
+    toggleBtn.textContent = "☀️";
   }
+
+  if (document.getElementById("gallery")) {
+    loadGallery();
+  }
+});
+
 
   // اگر صفحه گالری هست
   if (document.getElementById("gallery")) {

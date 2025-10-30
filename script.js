@@ -12,6 +12,12 @@ function toggleDarkMode() {
   );
 }
 
+// باز و بسته کردن منوی موبایل
+function toggleMenu() {
+  const nav = document.querySelector(".nav-links");
+  nav.classList.toggle("active");
+}
+
 // اعمال حالت ذخیره‌شده
 document.addEventListener("DOMContentLoaded", () => {
   if (localStorage.getItem("darkMode") === "on") {

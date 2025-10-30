@@ -5,12 +5,22 @@
 
 // حالت تاریک
 function toggleDarkMode() {
-  document.body.classList.toggle("dark-mode");
-  localStorage.setItem(
-    "darkMode",
-    document.body.classList.contains("dark-mode") ? "on" : "off"
-  );
+  const body = document.body;
+  const toggleBtn = document.querySelector(".dark-mode-toggle");
+
+  body.classList.toggle("dark-mode");
+  const isDark = body.classList.contains("dark-mode");
+
+  // ذخیره در localStorage
+  localStorage.setItem("darkMode", isDark ? "on" : "off");
+
+  // تغییر آیکون با افکت چرخش
+  toggleBtn.classList.add("rotating");
+  toggleBtn.textContent = isDark ? "🌙" : "☀️";
+
+  setTimeout(() => toggleBtn.classList.remove("rotating"), 400);
 }
+
 
 // باز و بسته کردن منوی موبایل
 function toggleMenu() {

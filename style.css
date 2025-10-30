@@ -327,3 +327,71 @@ footer {
     margin-left: 10px; /* در RTL، این باعث میشه فاصله سمت چپ بیفته */
   }
 }
+
+/* ==================== منوی همبرگری ==================== */
+
+/* دکمه منو (پیش‌فرض مخفی در دسکتاپ) */
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+/* واکنش‌گرایی برای موبایل */
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+    padding: 10px 20px;
+  }
+
+  .menu-toggle {
+    display: block; /* در موبایل نمایش داده شود */
+    color: #222;
+  }
+
+  body.dark-mode .menu-toggle {
+    color: #fff;
+  }
+
+  /* لینک‌ها در موبایل پنهان می‌شوند تا زمانی که منو باز شود */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 10px 0;
+  }
+
+  body.dark-mode .nav-links {
+    background: rgba(18, 18, 18, 0.95);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+    color: #222;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+  }
+
+  body.dark-mode .nav-links a {
+    color: #eee;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .nav-links a:last-child {
+    border-bottom: none;
+  }
+
+  .dark-mode-toggle {
+    align-self: center;
+    font-size: 1.5rem;
+    margin-top: 5px;
+  }
+}

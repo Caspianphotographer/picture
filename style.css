@@ -163,6 +163,28 @@ body.dark-mode .dark-mode-toggle {
   color: #555;
 }
 
+/* 🎨 افکت Hover برای عکس‌ها */
+.category-image-container {
+  position: relative;
+  overflow: hidden;          /* باعث میشه موقع زوم، عکس از قاب بیرون نزنه */
+  border-radius: 10px;       /* گوشه‌ها گرد بمونن */
+}
+
+.category-image-container img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.6s ease; /* انیمیشن نرم و ملایم */
+}
+
+.category-image-container:hover img {
+  transform: scale(1.08); /* کمی زوم بشه */
+}
+
+.category-image-container:hover {
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+  transition: box-shadow 0.3s ease;
+}
+
 /* ========== لایت‌باکس ========== */
 .lightbox {
   display: none;

@@ -374,13 +374,31 @@ footer {
     display: flex;
   }
 
-  .nav-links a {
-    padding: 10px;
+   .nav-links a {
+    display: block;
     text-align: center;
-    width: 100%;
+    padding: 8px 0;
+    width: auto; /* دیگه کل عرض رو نگیره */
+    margin: 4px auto;
     color: #222;
-    border-bottom: 1px solid rgba(0,0,0,0.05);
+    border: none;
+    background: transparent;
+    font-size: 1rem;
+    transition: color 0.3s;
   }
+
+  .nav-links a:hover {
+    color: #0b74de;
+  }
+
+  body.dark-mode .nav-links a {
+    color: #eee;
+  }
+
+  body.dark-mode .nav-links a:hover {
+    color: #5fa8ff;
+  }
+
 
   body.dark-mode .nav-links a {
     color: #eee;

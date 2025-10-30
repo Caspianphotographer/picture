@@ -67,7 +67,7 @@ body.dark-mode .nav-links a {
 .dark-mode-toggle {
   display: inline-block !important;
   color: #222;
-  margin-right: 10px;
+  margin-left: 10px;
   cursor: pointer;
 }
 

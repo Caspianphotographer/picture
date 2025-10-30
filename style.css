@@ -347,6 +347,8 @@ footer {
   .menu-toggle {
     display: block; /* در موبایل نمایش داده شود */
     color: #222;
+    order: -1;         /* بیار سمت چپ در RTL */
+    margin-left: auto; /* فشار بده به چپ */
   }
 
   body.dark-mode .menu-toggle {

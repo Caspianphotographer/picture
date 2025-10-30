@@ -386,17 +386,32 @@ footer {
 
   /* لینک‌ها در موبایل پنهان می‌شوند تا زمانی که منو باز شود */
   .nav-links {
-    display: none;
+    display: flex;
     flex-direction: column;
-    align-items: center; /* لینک‌ها وسط‌چین بشن */
+    align-items: center;
+    gap: 10px;
+    position: absolute;
+    top: 60px;
+    right: 0;
     width: 100%;
     background: rgba(255, 255, 255, 0.95);
     border-radius: 12px;
-    margin-top: 10px;
-    padding: 10px 0;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+
+    /* 🎬 انیمیشن نرم */
+    opacity: 0;
+    transform: translateY(-20px);
+    pointer-events: none;
+    transition: all 0.4s ease;
+  }
+  
+  .nav-links.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
   }
 
+  
   body.dark-mode .nav-links {
     background: rgba(20, 20, 20, 0.95);
   }

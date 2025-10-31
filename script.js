@@ -39,17 +39,12 @@ document.addEventListener("DOMContentLoaded", () => {
     toggleBtn.textContent = "☀️";
   }
 
-  if (document.getElementById("gallery")) {
-    loadGallery();
-  }
-});
-
-
   // اگر صفحه گالری هست
   if (document.getElementById("gallery")) {
     loadGallery();
   }
 });
+
 
 // لایت‌باکس
 function openLightbox(img) {

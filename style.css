@@ -416,10 +416,6 @@ footer {
     background: rgba(20, 20, 20, 0.95);
   }
 
-  .nav-links.active {
-    display: flex;
-  }
-
    .nav-links a {
     display: block;
     text-align: center;

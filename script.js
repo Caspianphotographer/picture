@@ -131,7 +131,7 @@ function loadGallery() {
 
   const categoryInfo = {
     fajr1: "برد پرگل فجر — ثبت احساسات تیم و اقتدار 11 بر 1 در مقابل ستاره ساز آبیک",
-    portrait: "چهره‌هایی از زندگی روزمره، در لحظه‌هایی که احساس واقعی دیده می‌شود.",
+    fajr3: "نبرد جنجالی فجر و شمس آذر در مستطیل سبز",
     urban: "نمایی از شهرها و خیابان‌ها، در هم‌زیستی نظم و بی‌نظمی مدرن.",
     fajr2: "فوتبال میان غبار — روایت نبردی میان غبار شهر الوند "
   };
@@ -174,10 +174,49 @@ function loadGallery() {
       "assets/thumbs/fajr-34.jpg",
       "assets/thumbs/fajr-35.jpg"
     ],
-    portrait: [
-      "assets/thumbs/portrait1.jpg",
-      "assets/thumbs/portrait2.jpg",
-      "assets/thumbs/portrait3.jpg"
+    fajr3: [
+      "assets/thumbs/fajr3-1.jpg",
+      "assets/thumbs/fajr3-2.jpg",
+      "assets/thumbs/fajr3-3.jpg",
+      "assets/thumbs/fajr3-4.jpg",
+      "assets/thumbs/fajr3-5.jpg",
+      "assets/thumbs/fajr3-6.jpg",
+      "assets/thumbs/fajr3-7.jpg",
+      "assets/thumbs/fajr3-8.jpg",
+      "assets/thumbs/fajr3-9.jpg",
+      "assets/thumbs/fajr3-10.jpg",
+      "assets/thumbs/fajr3-11.jpg",
+      "assets/thumbs/fajr3-12.jpg",
+      "assets/thumbs/fajr3-13.jpg",
+      "assets/thumbs/fajr3-14.jpg",
+      "assets/thumbs/fajr3-15.jpg",
+      "assets/thumbs/fajr3-16.jpg",
+      "assets/thumbs/fajr3-17.jpg",
+      "assets/thumbs/fajr3-18.jpg",
+      "assets/thumbs/fajr3-19.jpg",
+      "assets/thumbs/fajr3-20.jpg",
+      "assets/thumbs/fajr3-21.jpg",
+      "assets/thumbs/fajr3-22.jpg",
+      "assets/thumbs/fajr3-23.jpg",
+      "assets/thumbs/fajr3-24.jpg",
+      "assets/thumbs/fajr3-25.jpg",
+      "assets/thumbs/fajr3-26.jpg",
+      "assets/thumbs/fajr3-27.jpg",
+      "assets/thumbs/fajr3-28.jpg",
+      "assets/thumbs/fajr3-29.jpg",
+      "assets/thumbs/fajr3-30.jpg",
+      "assets/thumbs/fajr3-31.jpg",
+      "assets/thumbs/fajr3-32.jpg",
+      "assets/thumbs/fajr3-33.jpg",
+      "assets/thumbs/fajr3-34.jpg",
+      "assets/thumbs/fajr3-35.jpg",
+      "assets/thumbs/fajr3-36.jpg",
+      "assets/thumbs/fajr3-37.jpg",
+      "assets/thumbs/fajr3-38.jpg",
+      "assets/thumbs/fajr3-39.jpg",
+      "assets/thumbs/fajr3-40.jpg",
+      "assets/thumbs/fajr3-41.jpg",
+      "assets/thumbs/fajr3-42.jpg"
     ],
     urban: [
       "assets/thumbs/urban1.jpg",

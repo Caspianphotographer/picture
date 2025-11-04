@@ -272,6 +272,8 @@ function loadGallery() {
       "assets/thumbs/fajr2-2.jpg",
       "assets/thumbs/fajr2-3.jpg"
     ],
+    kid_and_pray: [
+    ],
   };
 
   const gallerySection = document.getElementById("gallery");

@@ -274,6 +274,36 @@ function loadGallery() {
     ],
     kid_and_pray: [
     ],
+    sotode: [
+      "assets/thumbs/sotode-1.jpg",
+      "assets/thumbs/sotode-2.jpg",
+      "assets/thumbs/sotode-3.jpg",
+      "assets/thumbs/sotode-4.jpg",
+      "assets/thumbs/sotode-5.jpg",
+      "assets/thumbs/sotode-6.jpg",
+      "assets/thumbs/sotode-7.jpg",
+      "assets/thumbs/sotode-8.jpg",
+      "assets/thumbs/sotode-9.jpg",
+      "assets/thumbs/sotode-10.jpg",
+      "assets/thumbs/sotode-11.jpg",
+      "assets/thumbs/sotode-12.jpg",
+      "assets/thumbs/sotode-13.jpg",
+      "assets/thumbs/sotode-14.jpg",
+      "assets/thumbs/sotode-15.jpg",
+      "assets/thumbs/sotode-16.jpg",
+      "assets/thumbs/sotode-17.jpg",
+      "assets/thumbs/sotode-18.jpg",
+      "assets/thumbs/sotode-19.jpg",
+      "assets/thumbs/sotode-20.jpg",
+      "assets/thumbs/sotode-21.jpg",
+      "assets/thumbs/sotode-22.jpg",
+      "assets/thumbs/sotode-23.jpg",
+      "assets/thumbs/sotode-24.jpg",
+      "assets/thumbs/sotode-25.jpg",
+      "assets/thumbs/sotode-26.jpg",
+      "assets/thumbs/sotode-27.jpg",
+      "assets/thumbs/sotode-28.jpg"
+    ],
   };
 
   const gallerySection = document.getElementById("gallery");
